@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+     <meta charset="utf-8">
+<script>
+/*
+    *** API sample program ***
+    Programmer: Keiji Mitsubuchi
+    Date : 2014.10.26
+*/
+
+function get_data() {
+    var http = new XMLHttpRequest();
+
+    var textobj = document.getElementById("text");
+    textobj.innerHTML="Loading";
+
+    //受信時のコールバック関数を登録
+    http.onreadystatechange = function() {
+        if (http.readyState == 4 && http.status == 200) {
+            var data = http.responseText;
+            textobj.innerHTML=data;
+        }
+    }
+
+    http.open("GET","http://www.triaws.com/prot/get.php?id=G000TG0007&type=long");
+    http.send(null);
+}
+
+function put_data() {
+    var http = new XMLHttpRequest();
+
+    var textobj = document.getElementById("text");
+    textobj.innerHTML="Loading";
+
+    //受信時のコールバック関数を登録
+    http.onreadystatechange = function() {
+        if (http.readyState == 4 && http.status == 200) {
+            var data = http.responseText;
+            textobj.innerHTML=data;
+        }
+    }
+
+    //送信
+    var pos=document.getElementById("data").value;
+    
+    //文字コード変換
+    // pos=encodeURIComponent(pos);
+
+    http.open("GET","http://www.triaws.com/prot/put.php?id=G000TG0007&type=long&value="+pos);
+    http.send(null);
+}
+</script>
+</head>
+<body>
+<div id="text"></div><br />
+<input id="butget" type="button" value="GET data" onclick="return get_data()" /><br />
+<input id="data" type="text" value="0" /><br />
+<input id="butput" type="button" value="PUT data" onclick="return put_data()" />
+</body>
+</html>
