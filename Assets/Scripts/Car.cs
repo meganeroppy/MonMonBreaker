@@ -32,9 +32,8 @@ public class Car : MonoBehaviour {
 	private GameObject screwsP;
 	private GameObject screws;
 	
-	
 	private void Awake(){
-		
+			
 		for(int i = 0 ; i < transform.childCount ; i++){
 			models.Add( transform.GetChild(i).gameObject );
 		}

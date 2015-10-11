@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour {
 	private void Update(){
 		int diff = api.val - localVal;
 		localVal = api.val % MAX_CNT;
-	//	Debug.Log(localVal);
 		
 		int prevDmg = dmg;
 		
@@ -41,7 +40,7 @@ public class GameManager : MonoBehaviour {
 			car.UpdateEffect();
 		}
 		
-		Debug.Log(diff);
+		Debug.Log("localVal:" + localVal.ToString() );
 		
 		if(diff > 0){
 			car.Explode(dmg != prevDmg);
