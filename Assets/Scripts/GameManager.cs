@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private void Update(){
-		int diff = api.val - localVal;
+		int diff = ( api.val % MAX_CNT ) - localVal;
 		localVal = api.val % MAX_CNT;
 		
 		int prevDmg = dmg;
