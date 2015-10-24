@@ -9,10 +9,12 @@ using System.Collections;
 
 public class APItest : MonoBehaviour {
 	public string api_url="http://www.triaws.com/prot/"; 
+	//public string api_url="http://www.triaws.com/prot/?p="; 
 	public string api_put="put.php";
 	public string api_get="get.php";
 	public string api_id="G000TG0007";
-
+	//public string api_id="002";
+	
 //	private int sw;
 //	private int sh;
 	private string api_type="long";
