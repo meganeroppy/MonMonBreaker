@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
 
 	public static int cnt=0;
 	public static int MAX_CNT = 0;
-	public const int MAX_CNT_EACH = 5;
+	public static int MAX_CNT_EACH = 20; // this * 6 = max
 	public static int dmg=0;
 	public static int maxDmgLv;
 	
